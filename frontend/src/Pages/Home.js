@@ -1,7 +1,7 @@
 import Header from '../Components/Header';
 import Features from '../Components/Features';
-import Comments from '../Components/Comments';
-import Blog from '../Components/Blog';
+import Comments from '../Components/Comment/Comments';
+import FeaturedBlogs from '../Components/Blog/FeaturedBlogs';
 import Subscribe from '../Components/Subscribe';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
             <Header />
             <Features />
             <Comments />
-            <Blog />
+            <FeaturedBlogs />
             <Subscribe />
         </>
         )

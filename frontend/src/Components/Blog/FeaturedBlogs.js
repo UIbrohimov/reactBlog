@@ -1,4 +1,4 @@
-const Blog = () => {
+const FeaturedBlogs = () => {
     return (
         // Blog preview section
         <section className="py-5">
@@ -82,4 +82,4 @@ const Blog = () => {
     )
 }
 
-export default Blog;
+export default FeaturedBlogs;

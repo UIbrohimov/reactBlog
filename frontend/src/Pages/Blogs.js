@@ -1,5 +1,15 @@
+import CompanyBlog from '../Components/Blog/CompanyBlog';
+import News from '../Components/Blog/News';
+import FeaturedBlogs from '../Components/Blog/FeaturedBlogs';
+
 const Blogs = () => {
-    return <h1>Blog Articles</h1>;
+    return (
+        <>
+            <CompanyBlog />
+            <News />
+            <FeaturedBlogs />
+        </>
+        )
 };
   
 export default Blogs;

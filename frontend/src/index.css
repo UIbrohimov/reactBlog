@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-featured-blog {
+  background-image:  url('https://dummyimage.com/700x350/343a40/6c757d');
+}
