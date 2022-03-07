@@ -39,10 +39,10 @@ const News = () => {
                                             <a href="#!">press@domain.com</a>
                                         </p>
                                         <div className="h6 fw-bolder">Follow us</div>
-                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="bi-twitter"></i></a>
-                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="bi-facebook"></i></a>
-                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="bi-linkedin"></i></a>
-                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="bi-youtube"></i></a>
+                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="fa fa-twitter"></i></a>
+                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="fa fa-facebook"></i></a>
+                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="fa fa-linkedin"></i></a>
+                                        <a className="fs-5 px-2 link-dark" href="#!"><i className="fa fa-youtube"></i></a>
                                     </div>
                                 </div>
                             </div>

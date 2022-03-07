@@ -1,3 +1,4 @@
+
 const CompanyBlog = () => {
     return (
         <section className="py-5">
@@ -20,7 +21,11 @@ const CompanyBlog = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 col-xl-7"><div className="bg-featured-blog"></div></div>
+                            <div className="col-lg-6 col-xl-7">
+                                <div className="bg-featured-blog">
+                                    <img src='https://dummyimage.com/700x350/343a40/6c757d' alt='featured image'></img>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
