@@ -1,5 +1,6 @@
-from unicodedata import name
 from django.urls import path
+from django.views.generic import TemplateView
+
 
 from .views import (
     about_view,
@@ -15,6 +16,7 @@ from .views import (
 
 app_name = "birnima"
 urlpatterns = [
+    path("", TemplateView.as_view(template_name="noPage.html")),
     path('about/', about_view, name="about"),
     path('blog/', blog_view, name="blog"),
     path('features/', features_view, name="features"),
