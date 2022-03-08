@@ -75,7 +75,20 @@ class Pricing(models.Model):
         return self.title
 
 
+class FAQCategory(models.Model):
+    title = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
 class FAQ(models.Model):
+    category = models.ForeignKey(
+        FAQCategory,
+        verbose_name=_("Category"),
+        on_delete=models.CASCADE,
+        blank=True, null=True)
     queston = models.CharField(max_length=100)
     answer = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

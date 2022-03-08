@@ -7,7 +7,9 @@ from .views import (
     features_view,
     comment_view,
     feedback_view,
-    portfolio_view
+    portfolio_view,
+    faq_view,
+    faqcategory_view,
 )
 
 
@@ -19,4 +21,6 @@ urlpatterns = [
     path('comment/', comment_view, name="comment"),
     path('feedback/', feedback_view, name="feedback"),
     path('portfolio/', portfolio_view, name="portfolio"),
+    path('faq/', faq_view, name="faq"),
+    path('faqcategory/', faqcategory_view, name="faqcategory"),
 ]

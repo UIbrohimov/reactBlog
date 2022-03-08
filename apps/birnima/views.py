@@ -3,14 +3,16 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import About, Blog, Features, Comment, Feedback, Portfolio
+from .models import About, Blog, Features, Comment, Feedback, Portfolio, FAQ, FAQCategory
 from .serializers import (
     AboutModelSerializer,
     BlogModelSerializer,
     FeaturesModelSerializer,
     CommentModelSerializer,
     FeedbackModelSerializer,
-    PortfolioModelSerializer
+    PortfolioModelSerializer,
+    FAQCategoryModelSerializer,
+    FAQModelSerializer,
 )
 
 
@@ -95,3 +97,31 @@ class PortfolioList(APIView):
 
 
 portfolio_view = PortfolioList.as_view()
+
+
+class FAQCategoryList(APIView):
+    """
+    Get all records from faqcategory model
+    """
+    queryset = FAQCategory.objects.all()
+
+    def get(self, request, format=None):
+        serializer = FAQCategoryModelSerializer(self.queryset.all(), many=True)
+        return Response(serializer.data)
+
+
+faqcategory_view = FAQCategoryList.as_view()
+
+
+class FAQList(APIView):
+    """
+    Get all records from faq model
+    """
+    queryset = FAQ.objects.all()
+
+    def get(self, request, format=None):
+        serializer = FAQModelSerializer(self.queryset.all(), many=True)
+        return Response(serializer.data)
+
+
+faq_view = FAQList.as_view()
