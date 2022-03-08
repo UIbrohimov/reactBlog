@@ -3,7 +3,17 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import About, Blog, Features, Comment, Feedback, Portfolio, FAQ, FAQCategory
+from .models import (
+    About,
+    Blog,
+    Features,
+    Comment,
+    Feedback,
+    Portfolio,
+    FAQ,
+    FAQCategory,
+    Pricing,
+)
 from .serializers import (
     AboutModelSerializer,
     BlogModelSerializer,
@@ -13,6 +23,7 @@ from .serializers import (
     PortfolioModelSerializer,
     FAQCategoryModelSerializer,
     FAQModelSerializer,
+    PricingModelSerializer,
 )
 
 
@@ -125,3 +136,17 @@ class FAQList(APIView):
 
 
 faq_view = FAQList.as_view()
+
+
+class PricingList(APIView):
+    """
+    Get all records from pricing model
+    """
+    queryset = Pricing.objects.all()
+
+    def get(self, request, format=None):
+        serializer = PricingModelSerializer(self.queryset.all(), many=True)
+        return Response(serializer.data)
+
+
+pricing_view = PricingList.as_view()

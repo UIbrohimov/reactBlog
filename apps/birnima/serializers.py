@@ -3,7 +3,17 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
-from .models import About, Blog, Features, Comment, Feedback, Portfolio, FAQ, FAQCategory
+from .models import (
+    About,
+    Blog,
+    Features,
+    Comment,
+    Feedback,
+    Portfolio,
+    FAQ,
+    FAQCategory,
+    Pricing,
+)
 
 # Serializers define the API representation.
 class AboutModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -75,3 +85,12 @@ class FAQModelSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = FAQ
         fields = ['category', 'question', 'answer']
+
+
+class PricingModelSerializer(serializers.HyperlinkedModelSerializer):
+
+    # permission_classes = [AllowAny]
+
+    class Meta:
+        model = Pricing
+        fields = ['title', 'info', 'price']

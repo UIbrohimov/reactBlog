@@ -11,6 +11,7 @@ from .views import (
     portfolio_view,
     faq_view,
     faqcategory_view,
+    pricing_view,
 )
 
 
@@ -25,4 +26,5 @@ urlpatterns = [
     path('portfolio/', portfolio_view, name="portfolio"),
     path('faq/', faq_view, name="faq"),
     path('faqcategory/', faqcategory_view, name="faqcategory"),
+    path('pricing/', pricing_view, name="pricing"),
 ]
