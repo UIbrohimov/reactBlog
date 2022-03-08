@@ -4,7 +4,15 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import About, Blog, Features, Comment, Feedback, Portfolio
-from .serializers import AboutModelSerializer
+from .serializers import (
+    AboutModelSerializer,
+    BlogModelSerializer,
+    FeaturesModelSerializer,
+    CommentModelSerializer,
+    FeedbackModelSerializer,
+    PortfolioModelSerializer
+)
+
 
 class AboutList(APIView):
     """

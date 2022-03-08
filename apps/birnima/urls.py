@@ -14,4 +14,9 @@ from .views import (
 app_name = "birnima"
 urlpatterns = [
     path('about/', about_view, name="about"),
+    path('blog/', blog_view, name="blog"),
+    path('features/', features_view, name="features"),
+    path('comment/', comment_view, name="comment"),
+    path('feedback/', feedback_view, name="feedback"),
+    path('portfolio/', portfolio_view, name="portfolio"),
 ]
