@@ -1,6 +1,5 @@
 from django.urls import path, include
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
+from rest_framework import serializers
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from .models import (
@@ -22,15 +21,15 @@ class AboutModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = About
-        fields = ['title', 'description', 'image']
+        fields = ['id', 'title', 'description', 'image']
 
 class BlogModelSerializer(serializers.HyperlinkedModelSerializer):
 
     # permission_classes = [AllowAny]
-
+    created_at = serializers.DateTimeField(read_only=True, format="%Y-%m-%d")
     class Meta:
         model = Blog
-        fields = ['author', 'title', 'description', 'image']
+        fields = ['id', 'title', 'description', 'image', 'created_at']
 
 
 class FeaturesModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -39,7 +38,7 @@ class FeaturesModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Features
-        fields = ['title', 'description', 'bi_icon_class']
+        fields = ['id', 'title', 'description', 'bi_icon_class']
 
 
 class CommentModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -48,7 +47,7 @@ class CommentModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['blog', 'author', 'content']
+        fields = ['id', 'blog', 'author', 'content']
 
 
 class FeedbackModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -57,7 +56,7 @@ class FeedbackModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Feedback
-        fields = ['author', 'title', 'description', 'published']
+        fields = ['id', 'author__name', 'title', 'description', 'published']
 
 
 class PortfolioModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -66,7 +65,7 @@ class PortfolioModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Portfolio
-        fields = ['title', 'description']
+        fields = ['id', 'title', 'description']
 
 
 class FAQCategoryModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -84,7 +83,7 @@ class FAQModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = FAQ
-        fields = ['category', 'question', 'answer']
+        fields = ['id', 'category', 'question', 'answer']
 
 
 class PricingModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -93,4 +92,4 @@ class PricingModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Pricing
-        fields = ['title', 'info', 'price']
+        fields = ['id', 'title', 'info', 'price']

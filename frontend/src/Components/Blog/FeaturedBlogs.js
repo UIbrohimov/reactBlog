@@ -15,7 +15,7 @@ class FeaturedBlogs extends React.Component{
     // ComponentDidMount is used to
     // execute the code 
     componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/posts")
+        fetch("http://127.0.0.1:8000/blog")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
@@ -47,7 +47,7 @@ class FeaturedBlogs extends React.Component{
                         {items.map((item) => (
                         <div className="col-lg-4 mb-5" key={item.id}>
                             <div className="card h-100 shadow border-0">
-                                {/* <img className="card-img-top" src="" alt="..." /> */}
+                                <img className="card-img-top" src={item.image} alt="..." />
                                 <div className="card-body p-4">
                                     <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a className="text-decoration-none link-dark stretched-link" href="#!">
@@ -61,7 +61,7 @@ class FeaturedBlogs extends React.Component{
                                             <img className="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div className="small">
                                                 <div className="fw-bold">{item.id} - ubaydullo</div>
-                                                <div className="text-muted">March 12, 2021 &middot; 6 min read</div>
+                                                <div className="text-muted">{item.created_at} &middot; 6 min read</div>
                                             </div>
                                         </div>
                                     </div>

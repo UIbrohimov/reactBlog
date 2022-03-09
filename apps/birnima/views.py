@@ -47,7 +47,7 @@ class BlogList(APIView):
     queryset = Blog.objects.all()
 
     def get(self, request, format=None):
-        serializer = BlogModelSerializer(self.queryset.all(), many=True)
+        serializer = BlogModelSerializer(self.queryset.all(), many=True, context={'request': request})
         return Response(serializer.data)
 
 
