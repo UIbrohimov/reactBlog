@@ -53,10 +53,11 @@ class CommentModelSerializer(serializers.HyperlinkedModelSerializer):
 class FeedbackModelSerializer(serializers.HyperlinkedModelSerializer):
 
     # permission_classes = [AllowAny]
+    author = serializers.ReadOnlyField(source='author.username')
 
     class Meta:
         model = Feedback
-        fields = ['id', 'author__name', 'title', 'description', 'published']
+        fields = ['id', 'author', 'title', 'description', 'published']
 
 
 class PortfolioModelSerializer(serializers.HyperlinkedModelSerializer):

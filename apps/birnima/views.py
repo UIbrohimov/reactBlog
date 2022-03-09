@@ -86,7 +86,7 @@ class FeedbackList(APIView):
     """
     Get all records from feedback model
     """
-    queryset = Feedback.objects.all()
+    queryset = Feedback.objects.filter(published=True)
 
     def get(self, request, format=None):
         serializer = FeedbackModelSerializer(self.queryset.all(), many=True)
