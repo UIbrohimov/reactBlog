@@ -66,7 +66,7 @@ class PortfolioModelSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Portfolio
-        fields = ['id', 'title', 'description']
+        fields = ['id', 'title', 'description', 'image']
 
 
 class FAQCategoryModelSerializer(serializers.HyperlinkedModelSerializer):
