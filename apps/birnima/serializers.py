@@ -90,6 +90,7 @@ class FAQModelSerializer(serializers.HyperlinkedModelSerializer):
 class PricingModelSerializer(serializers.HyperlinkedModelSerializer):
 
     # permission_classes = [AllowAny]
+    info  = serializers.JSONField()
 
     class Meta:
         model = Pricing

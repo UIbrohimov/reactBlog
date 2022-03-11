@@ -23,6 +23,7 @@ class PriceTable extends React.Component {
     }
 
     render() {
+
         return (
             <section className="bg-light py-5">
                 <div className="container px-5 my-5">
@@ -41,10 +42,9 @@ class PriceTable extends React.Component {
                                         <span className="text-muted"> / month.</span>
                                     </div>
                                     <ul className="list-unstyled mb-4">
-                                        {Object.entries}
                                         <li className="mb-2">
                                             <i className="bi bi-check text-primary"></i>
-                                            <strong>{JSON.parse(JSON.stringify(item.info))}</strong>
+                                            <strong>{item.info.users}</strong>
                                         </li>
                                         <li className="mb-2">
                                             <i className="bi bi-check text-primary"></i>
