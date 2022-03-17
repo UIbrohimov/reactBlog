@@ -80,11 +80,11 @@ class FAQCategoryModelSerializer(serializers.HyperlinkedModelSerializer):
 
 class FAQModelSerializer(serializers.HyperlinkedModelSerializer):
 
-    # permission_classes = [AllowAny]
+    category_id = serializers.CharField(source='category.id')
 
     class Meta:
         model = FAQ
-        fields = ['id', 'category', 'question', 'answer']
+        fields = ['id', 'category_id', 'queston', 'answer']
 
 
 class PricingModelSerializer(serializers.HyperlinkedModelSerializer):

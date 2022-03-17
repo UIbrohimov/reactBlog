@@ -131,6 +131,9 @@ class FAQList(APIView):
     queryset = FAQ.objects.all()
 
     def get(self, request, format=None):
+        category = self.request.GET.get('category')
+        if category:
+            self.queryset = self.queryset.filter(category__id=category)
         serializer = FAQModelSerializer(self.queryset.all(), many=True)
         return Response(serializer.data)
 

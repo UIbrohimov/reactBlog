@@ -42,38 +42,19 @@ class PriceTable extends React.Component {
                                         <span className="text-muted"> / month.</span>
                                     </div>
                                     <ul className="list-unstyled mb-4">
-                                        <li className="mb-2">
+                                        {Object.entries(item.info).map(([key, value]) => (
+                                        (key.length > 1) ? (
+                                        <li className="mb-2" key={key}>
                                             <i className="bi bi-check text-primary"></i>
-                                            <strong>{item.info.users}</strong>
+                                            <strong>{key} </strong>-<span> {value}</span>
                                         </li>
-                                        <li className="mb-2">
-                                            <i className="bi bi-check text-primary"></i>
-                                            5GB storage
+                                        ) : (
+                                        <li className="mb-2" key={key}>
+                                            <i className="bi bi-x text-muted"></i>
+                                            <span>{value}</span>
                                         </li>
-                                        <li className="mb-2">
-                                            <i className="bi bi-check text-primary"></i>
-                                            Unlimited public projects
-                                        </li>
-                                        <li className="mb-2">
-                                            <i className="bi bi-check text-primary"></i>
-                                            Community access
-                                        </li>
-                                        <li className="mb-2 text-muted">
-                                            <i className="bi bi-x"></i>
-                                            Unlimited private projects
-                                        </li>
-                                        <li className="mb-2 text-muted">
-                                            <i className="bi bi-x"></i>
-                                            Dedicated support
-                                        </li>
-                                        <li className="mb-2 text-muted">
-                                            <i className="bi bi-x"></i>
-                                            Free linked domain
-                                        </li>
-                                        <li className="text-muted">
-                                            <i className="bi bi-x"></i>
-                                            Monthly status reports
-                                        </li>
+                                        )
+                                        ))}
                                     </ul>
                                     <div className="d-grid"><a className="btn btn-outline-primary" href="#!">Choose plan</a></div>
                                 </div>
